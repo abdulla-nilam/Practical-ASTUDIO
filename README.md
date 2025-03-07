@@ -101,9 +101,9 @@ php artisan serve
 
 ## **Example API Requests**
 ### **You can use given postman payload in the root** [AStudio.postman_collection.json](AStudio.postman_collection.json)
-
+Use this to set the bearer![img.png](screenshot/img.png)
 (sample)
-### **1Register User**
+### **Register User**
 ```bash
 curl -X POST "http://127.0.0.1:8000/api/register"
   -H "Content-Type: application/json"     
