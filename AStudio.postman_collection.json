@@ -1,0 +1,1092 @@
+{
+	"info": {
+		"_postman_id": "e2e69be8-f214-4c5b-b0a4-210070c529f1",
+		"name": "AStudio",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7053298"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first_name\": \"John\",\r\n    \"last_name\": \"Doe\",\r\n    \"email\": \"john@example.com\",\r\n    \"password\": \"securepassword\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"register"
+							]
+						},
+						"description": "Generated from cURL: curl -X POST \"http://127.0.0.1:8000/api/register\" \\\r\n     -H \"Content-Type: application/json\" \\\r\n     -d '{\r\n         \"first_name\": \"John\",\r\n         \"last_name\": \"Doe\",\r\n         \"email\": \"john@example.com\",\r\n         \"password\": \"securepassword\"\r\n     }'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"john@example.com\",\n    \"password\": \"securepassword\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login"
+							]
+						},
+						"description": "Generated from cURL: curl -X POST \"http://127.0.0.1:8000/api/login\" \\\n     -H \"Content-Type: application/json\" \\\n     -d '{\n         \"email\": \"john@example.com\",\n         \"password\": \"securepassword\"\n     }'"
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{Bearer}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/logout",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"logout"
+							]
+						},
+						"description": "Generated from cURL: curl -X POST \"http://127.0.0.1:8000/api/logout\" \\\r\n     -H \"Authorization: Bearer YOUR_ACCESS_TOKEN\"\r\n"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Projects",
+			"item": [
+				{
+					"name": "List All Projects",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{Bearer}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/projects",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"projects"
+							]
+						},
+						"description": "Generated from cURL: curl -X GET \"http://127.0.0.1:8000/api/projects\" \\\r\n     -H \"Authorization: Bearer YOUR_ACCESS_TOKEN\"\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Save Project",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{Bearer}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"New Project\",\r\n    \"status\": \"active\",\r\n    \"user_ids\": [\r\n        1\r\n    ],\r\n    \"attributes\": [\r\n        {\r\n            \"attribute_id\": 1,\r\n            \"value\": \"IT\"\r\n        },\r\n        {\r\n            \"attribute_id\": 2,\r\n            \"value\": \"2024-06-01\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/projects",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"projects"
+							]
+						},
+						"description": "Generated from cURL: curl -X POST \"http://127.0.0.1:8000/api/projects\" \\\r\n     -H \"Content-Type: application/json\" \\\r\n     -H \"Authorization: Bearer YOUR_ACCESS_TOKEN\" \\\r\n     -d '{\r\n         \"name\": \"New Project\",\r\n         \"status\": \"active\",\r\n         \"user_ids\": [1, 2, 3],\r\n         \"attributes\": [\r\n             { \"attribute_id\": 1, \"value\": \"IT\" },\r\n             { \"attribute_id\": 2, \"value\": \"2024-06-01\" }\r\n         ]\r\n     }'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Project",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{Bearer}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Updated Project A\",\r\n    \"status\": \"inactive\",\r\n    \"attributes\": [\r\n        {\r\n            \"attribute_id\": 1,\r\n            \"value\": \"HR\"\r\n        },\r\n        {\r\n            \"attribute_id\": 2,\r\n            \"value\": \"2024-07-01\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/projects/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"projects",
+								"1"
+							]
+						},
+						"description": "Generated from cURL: curl -X PUT \"http://127.0.0.1:8000/api/projects/1\" \\\r\n     -H \"Content-Type: application/json\" \\\r\n     -H \"Authorization: Bearer YOUR_ACCESS_TOKEN\" \\\r\n     -d '{\r\n         \"name\": \"Updated Project A\",\r\n         \"status\": \"inactive\",\r\n         \"attributes\": [\r\n             { \"attribute_id\": 1, \"value\": \"HR\" },\r\n             { \"attribute_id\": 2, \"value\": \"2024-07-01\" }\r\n         ]\r\n     }'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Project",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{Bearer}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/projects/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"projects",
+								"1"
+							]
+						},
+						"description": "Generated from cURL: curl -X DELETE \"http://127.0.0.1:8000/api/projects/1\" \\\r\n     -H \"Authorization: Bearer YOUR_ACCESS_TOKEN\"\r\n"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Attributes",
+			"item": [
+				{
+					"name": "Attribute Values",
+					"item": [
+						{
+							"name": "Save Attribute Value",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{Bearer}}"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"attribute_id\": 1,\r\n    \"project_id\": 3,\r\n    \"value\": \"Finance\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/attribute-values",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"attribute-values"
+									]
+								},
+								"description": "Generated from cURL: curl -X POST \"http://127.0.0.1:8000/api/attribute-values\" \\\r\n     -H \"Content-Type: application/json\" \\\r\n     -H \"Authorization: Bearer YOUR_ACCESS_TOKEN\" \\\r\n     -d '{\r\n         \"attribute_id\": 1,\r\n         \"entity_id\": 1,\r\n         \"value\": \"Finance\"\r\n     }'\r\n"
+							},
+							"response": []
+						},
+						{
+							"name": "List All Attribute Values",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{Bearer}}"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/attribute-values",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"attribute-values"
+									]
+								},
+								"description": "Generated from cURL: curl -X GET \"http://127.0.0.1:8000/api/attribute-values\" \\\r\n     -H \"Authorization: Bearer YOUR_ACCESS_TOKEN\"\r\n"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Attribute Value",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{Bearer}}"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/attribute-values/2",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"attribute-values",
+										"2"
+									]
+								},
+								"description": "Generated from cURL: curl -X GET \"http://127.0.0.1:8000/api/attribute-values/1\" \\\r\n     -H \"Authorization: Bearer YOUR_ACCESS_TOKEN\"\r\n"
+							},
+							"response": []
+						},
+						{
+							"name": "Update Attribute value",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{Bearer}}"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"value\": \"Marketing\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/attribute-values/3",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"attribute-values",
+										"3"
+									]
+								},
+								"description": "Generated from cURL: curl -X PUT \"http://127.0.0.1:8000/api/attribute-values/1\" \\\r\n     -H \"Content-Type: application/json\" \\\r\n     -H \"Authorization: Bearer YOUR_ACCESS_TOKEN\" \\\r\n     -d '{\r\n         \"value\": \"Marketing\"\r\n     }'\r\n"
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Attribute Value",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{Bearer}}"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/attribute-values/1",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"attribute-values",
+										"1"
+									]
+								},
+								"description": "Generated from cURL: curl -X DELETE \"http://127.0.0.1:8000/api/attribute-values/1\" \\\r\n     -H \"Authorization: Bearer YOUR_ACCESS_TOKEN\"\r\n"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Save Attribute",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{Bearer}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"IT\",\r\n    \"type\": \"text\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/attributes",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"attributes"
+							]
+						},
+						"description": "Generated from cURL: curl -X POST \"http://127.0.0.1:8000/api/attributes\" \\\r\n     -H \"Content-Type: application/json\" \\\r\n     -H \"Authorization: Bearer YOUR_ACCESS_TOKEN\" \\\r\n     -d '{\r\n         \"name\": \"department\",\r\n         \"type\": \"text\"\r\n     }'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "List All Attributes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{Bearer}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/attributes",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"attributes"
+							]
+						},
+						"description": "Generated from cURL: curl -X GET \"http://127.0.0.1:8000/api/attributes\" \\\r\n     -H \"Authorization: Bearer YOUR_ACCESS_TOKEN\"\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Attribute",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{Bearer}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/attributes/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"attributes",
+								"1"
+							]
+						},
+						"description": "Generated from cURL: curl -X GET \"http://127.0.0.1:8000/api/attributes/1\" \\\r\n     -H \"Authorization: Bearer YOUR_ACCESS_TOKEN\"\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Attribute",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{Bearer}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"team2\",\r\n    \"type\": \"text\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/attributes/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"attributes",
+								"1"
+							]
+						},
+						"description": "Generated from cURL: curl -X PUT \"http://127.0.0.1:8000/api/attributes/1\" \\\r\n     -H \"Content-Type: application/json\" \\\r\n     -H \"Authorization: Bearer YOUR_ACCESS_TOKEN\" \\\r\n     -d '{\r\n         \"name\": \"team\",\r\n         \"type\": \"text\"\r\n     }'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Attribute",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{Bearer}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/attributes/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"attributes",
+								"1"
+							]
+						},
+						"description": "Generated from cURL: curl -X DELETE \"http://127.0.0.1:8000/api/attributes/999\" \\\r\n     -H \"Authorization: Bearer YOUR_ACCESS_TOKEN\"\r\n"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Filter",
+			"item": [
+				{
+					"name": "Filter by Project Name",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{Bearer}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/projects?filters[name]=LIKE:Beta",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"projects"
+							],
+							"query": [
+								{
+									"key": "filters[name]",
+									"value": "LIKE:Beta"
+								}
+							]
+						},
+						"description": "Generated from cURL: curl -X GET \"http://127.0.0.1:8000/api/projects?filters[name]=LIKE:ProjectA\" \\\r\n     -H \"Authorization: Bearer YOUR_ACCESS_TOKEN\"\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Filter by Department",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{Bearer}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/projects?filters[department]=HR",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"projects"
+							],
+							"query": [
+								{
+									"key": "filters[department]",
+									"value": "HR"
+								}
+							]
+						},
+						"description": "Generated from cURL: curl -X GET \"http://127.0.0.1:8000/api/projects?filters[department]=IT\" \\\r\n     -H \"Authorization: Bearer YOUR_ACCESS_TOKEN\"\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Filter by Budget",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{Bearer}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/projects?filters[budget]=>1000",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"projects"
+							],
+							"query": [
+								{
+									"key": "filters[budget]",
+									"value": ">1000"
+								}
+							]
+						},
+						"description": "Generated from cURL: curl -X GET \"http://127.0.0.1:8000/api/projects?filters[budget]=>100000\" \\\r\n     -H \"Authorization: Bearer YOUR_ACCESS_TOKEN\"\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Multiple filter",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{Bearer}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/projects?filters[name]=LIKE:Project&filters[department]=IT",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"projects"
+							],
+							"query": [
+								{
+									"key": "filters[name]",
+									"value": "LIKE:Project"
+								},
+								{
+									"key": "filters[department]",
+									"value": "IT"
+								}
+							]
+						},
+						"description": "Generated from cURL: curl -X GET \"http://127.0.0.1:8000/api/projects?filters[start_date]=<2024-06-01\" \\\r\n     -H \"Authorization: Bearer YOUR_ACCESS_TOKEN\"\r\n"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Timesheet",
+			"item": [
+				{
+					"name": "Save Timesheet",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{Bearer}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": 1,\r\n    \"project_id\": 3,\r\n    \"task_name\": \"Bug Fixing\",\r\n    \"date\": \"2024-03-06\",\r\n    \"hours\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/timesheets",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"timesheets"
+							]
+						},
+						"description": "Generated from cURL: curl -X POST \"http://127.0.0.1:8000/api/timesheets\" \\\r\n     -H \"Content-Type: application/json\" \\\r\n     -H \"Authorization: Bearer YOUR_ACCESS_TOKEN\" \\\r\n     -d '{\r\n         \"user_id\": 1,\r\n         \"project_id\": 2,\r\n         \"task_name\": \"Bug Fixing\",\r\n         \"date\": \"2024-03-06\",\r\n         \"hours\": 5\r\n     }'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "List All Timesheets",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{Bearer}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/timesheets",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"timesheets"
+							]
+						},
+						"description": "Generated from cURL: curl -X GET \"http://127.0.0.1:8000/api/timesheets\" \\\r\n     -H \"Authorization: Bearer YOUR_ACCESS_TOKEN\"\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Timesheet",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{Bearer}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/timesheets/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"timesheets",
+								"1"
+							]
+						},
+						"description": "Generated from cURL: curl -X GET \"http://127.0.0.1:8000/api/timesheets/1\" \\\r\n     -H \"Authorization: Bearer YOUR_ACCESS_TOKEN\"\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Timesheet",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{Bearer}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": 1,\r\n    \"project_id\": 3,\r\n    \"task_name\": \"Code Review\",\r\n    \"date\": \"2024-03-06\",\r\n    \"hours\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/timesheets/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"timesheets",
+								"1"
+							]
+						},
+						"description": "Generated from cURL: curl -X PUT \"http://127.0.0.1:8000/api/timesheets/1\" \\\r\n     -H \"Content-Type: application/json\" \\\r\n     -H \"Authorization: Bearer YOUR_ACCESS_TOKEN\" \\\r\n     -d '{\r\n         \"task_name\": \"Code Review\",\r\n         \"date\": \"2024-03-06\",\r\n         \"hours\": 6\r\n     }'\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Timesheet",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{Bearer}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/timesheets/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"timesheets",
+								"1"
+							]
+						},
+						"description": "Generated from cURL: curl -X DELETE \"http://127.0.0.1:8000/api/timesheets/1\" \\\r\n     -H \"Authorization: Bearer YOUR_ACCESS_TOKEN\"\r\n"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "Bearer",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNWUzZTI2NTBkMTNkMDQ3YTc0MjYwMTk2NTg4Nzc5ODdhMmZmYTcyYmRjNjg0MzZmYjczYjcxZjgxZjc1OGJlNmExMDA1Y2QxZGE3MzA2OTQiLCJpYXQiOjE3NDExOTk0MTUuNTI5MjA3LCJuYmYiOjE3NDExOTk0MTUuNTI5MjExLCJleHAiOjE3NzI3MzU0MTUuNTExNzk1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.hqe8qki9N8iik2aCkHdK6EyJZwXaDztH7SJfyXLACu3tXcyz9mLSyxykRgGRYYSPudpnJ8h4gWpwfqZyp1uumsX85HcBFb2rpgpvJzMJtcjGK1t_ps5yna5dSzLAYJ4UpKouVn1v1quGbGyHI32C2uNAzEcGBJUZN4p9ePbLBQKKnUlDLwKVI4M1dClxaxjQmNDTkE5A_2usexJofAXp_clQ5dYRXsqjpsccvsyquxJVb79cP4nkYc10De3SJhQfb_wEXBxyuVmBfBfc0VARalLpZF3RdK_esnNoPCH4s9-LLH__JXVaud1b72awMYTjrb3IZvz9tALJaQJ1AxVe7ww4DmjFSwOk9cJgRwhMKn2yDjyu3J_8HvoNQMWRHnKXoI69-u933R0ToEYRBqc08u8OzgJ-xjWScTXALNChBgJ1rtr2bfwnuv6L8sUYAyxYE9iIG3eTAVU_NWrdYWgDxhmriw75NQkMPU4D3XKmtwgr65QTIJNxEcaFNYgAm9nCLJ5bRWUYe5J1i43U2rQ9hAmscIxO7OYkektjFDdGNWDVcON7mjKPvUbC8b0ukwH4roqEQdeR4tWpgOqlSSuLDSZrEvxy4D6xZ-89YUyjWcu7Uj2xTHtg_js5VK7IxhYj9kKo0ulE6ZtLZB3sz6cIZhD-LDrf-sPNGOxv6KlEMTI",
+			"type": "default"
+		}
+	]
+}
