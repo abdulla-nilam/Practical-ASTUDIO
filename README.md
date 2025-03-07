@@ -8,8 +8,9 @@
 ## **Setup Instructions**
 ### **Step 1: Clone the Repository**
 ```bash
-git clone https://github.com/your-repo/project-management-api.git
-cd project-management-api
+https://github.com/abdulla-nilam/Practical-ASTUDIO.git .
+git checkout master
+
 ```
 
 ### **Step 2: Install Dependencies**
