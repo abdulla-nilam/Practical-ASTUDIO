@@ -61,42 +61,31 @@ php artisan serve
 
 **!!! We can use SWAGGER for the API. Since its paid just giving some endpoint here**
 
-### **Authentication**
-| Method | Endpoint         |
-|--------|-----------------|
-| `POST` | `/api/register` |
-| `POST` | `/api/login`    |
-| `POST` | `/api/logout`   |
-
-### ** Projects**
-| Method   | Endpoint             | Description                    
-|----------|---------------------|--------------------------------|
-| `GET`    | `/api/projects`      | Get all projects               |
-| `POST`   | `/api/projects`      | Create a project               |
-| `GET`    | `/api/projects/{id}` | Get project details            |
-| `PUT`    | `/api/projects/{id}` | Update a project               |
-| `DELETE` | `/api/projects/{id}` | Delete a project               |
-
-### **Timesheets**
-| Method   | Endpoint                 | Description                      |
-|----------|-------------------------|----------------------------------|
-| `GET`    | `/api/timesheets`        | Get all timesheets               |
-| `POST`   | `/api/timesheets`        | Create a timesheet entry         |
-| `GET`    | `/api/timesheets/{id}`   | Get timesheet details            |
-| `PUT`    | `/api/timesheets/{id}`   | Update a timesheet entry         |
-| `DELETE` | `/api/timesheets/{id}`   | Delete a timesheet entry         |
-
-### **Attributes & Attribute Values**
-| Method   | Endpoint                     | Description                        |
-|----------|-----------------------------|------------------------------------|
-| `GET`    | `/api/attributes`            | Get all attributes                 |
-| `POST`   | `/api/attributes`            | Create an attribute                |
-| `GET`    | `/api/attributes/{id}`       | Get attribute details              |
-| `PUT`    | `/api/attributes/{id}`       | Update an attribute                |
-| `DELETE` | `/api/attributes/{id}`       | Delete an attribute                |
-| `GET`    | `/api/attribute-values`      | Get all attribute values           |
-| `POST`   | `/api/attribute-values`      | Create an attribute value          |
-| `DELETE` | `/api/attribute-values/{id}` | Delete an attribute value          |
+Authentication
+ - POST /api/register
+ - POST /api/login
+ - POST /api/logout
+Projects
+ - GET /api/projects → Get all projects
+ - POST /api/projects → Create a project
+ - GET /api/projects/{id} → Get project details
+ - PUT /api/projects/{id} → Update a project
+ - DELETE /api/projects/{id} → Delete a project
+Timesheets
+ - GET /api/timesheets → Get all timesheets
+ - POST /api/timesheets → Create a timesheet entry
+ - GET /api/timesheets/{id} → Get timesheet details
+ - PUT /api/timesheets/{id} → Update a timesheet entry
+ - DELETE /api/timesheets/{id} → Delete a timesheet entry
+Attributes & Attribute Values
+ - GET /api/attributes → Get all attributes
+ - POST /api/attributes → Create an attribute
+ - GET /api/attributes/{id} → Get attribute details
+ - PUT /api/attributes/{id} → Update an attribute
+ - DELETE /api/attributes/{id} → Delete an attribute
+ - GET /api/attribute-values → Get all attribute values
+ - POST /api/attribute-values → Create an attribute value
+ - DELETE /api/attribute-values/{id} → Delete an attribute value
 
 ---
 
